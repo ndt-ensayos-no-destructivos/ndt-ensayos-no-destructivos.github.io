@@ -44,7 +44,7 @@ footer {
 
 /* Estilos para el contenedor de la imagen parallax */
 .parallax-container {
-    background-image: url('/img/parallax1.jpg'); /* Ruta de tu imagen */
+    background-image: url('/imagenes/parallax1.jpg'); /* Ruta de tu imagen */
     background-size: cover; /* Ajustar la imagen para cubrir todo el contenedor */
     background-attachment: fixed; /* Fijar la imagen para lograr el efecto de parallax */
     width: 100%; /* Ancho completo de la pantalla */
@@ -52,7 +52,7 @@ footer {
 }
 
 .parallax-container2 {
-    background-image: url('/img/parallax2.jpg'); /* Ruta de tu imagen */
+    background-image: url('/imagenes/parallax2.jpg'); /* Ruta de tu imagen */
     background-size: cover; /* Ajustar la imagen para cubrir todo el contenedor */
     background-attachment: fixed; /* Fijar la imagen para lograr el efecto de parallax */
     width: 100%; /* Ancho completo de la pantalla */
