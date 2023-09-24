@@ -1,0 +1,84 @@
+/* Estilo para las imágenes parallax */
+
+
+section {
+    padding-bottom: 20px;
+}
+
+footer {
+    padding-bottom: 40px;
+}
+.custom-list li {
+    list-style: none; /* Elimina el marcador predeterminado (punto) */
+}
+
+.centered-content {
+    text-align: center; /* Centrar el texto horizontalmente */
+}
+.flip-horizontal {
+    transform: scaleY(-1); /* Voltear horizontalmente */
+}
+
+/* Estilos para el botón flotante de WhatsApp */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.whatsapp-icon {
+    display: block;
+    width: 60px;
+    height: 60px;
+    background-color: rgb(223, 223, 223); /* Color verde de WhatsApp */
+    border-radius: 50%;
+    text-align: center;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.whatsapp-icon img {
+    width: 100%;
+    margin-top: 5%;
+}
+
+/* Estilos para el contenedor de la imagen parallax */
+.parallax-container {
+    background-image: url('/img/parallax1.jpg'); /* Ruta de tu imagen */
+    background-size: cover; /* Ajustar la imagen para cubrir todo el contenedor */
+    background-attachment: fixed; /* Fijar la imagen para lograr el efecto de parallax */
+    width: 100%; /* Ancho completo de la pantalla */
+    height: 200px; /* Altura de la pantalla completa */
+}
+
+.parallax-container2 {
+    background-image: url('/img/parallax2.jpg'); /* Ruta de tu imagen */
+    background-size: cover; /* Ajustar la imagen para cubrir todo el contenedor */
+    background-attachment: fixed; /* Fijar la imagen para lograr el efecto de parallax */
+    width: 100%; /* Ancho completo de la pantalla */
+    height: 200px; /* Altura de la pantalla completa */
+}
+
+/* Estilo para el texto flotante */
+.floating-text {
+    position: absolute; /* Posición absoluta para que flote sobre la imagen */
+    top: 0; /* Alinea el texto verticalmente al centro */
+    left: 0; /* Deja el texto en el borde izquierdo del contenedor */
+    right: 0; /* Deja el texto en el borde derecho del contenedor */
+    transform: translateY(-50%); /* Centra el texto solo verticalmente */
+    background-color: rgba(0, 56, 22, 0.5); /* Fondo semi-transparente para que el texto sea legible */
+    color: white; /* Color del texto */
+    padding: 30px; /* Espacio alrededor del texto */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: opacity 0.3s ease-in-out; /* Transición de opacidad suave */
+}
+
+.texto-slider {
+    font-family: cursive; /* Establece la fuente cursiva */
+    font-size: 12px; /* Establece el tamaño de fuente a 12 píxeles */
+}
+@media (min-width: 768px) {
+    .texto-slider{
+        font-size: 20px;
+    }
+}
