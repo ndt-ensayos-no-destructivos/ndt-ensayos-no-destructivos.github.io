@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Tu Nombre" />
+    <title>Calculadora</title>
+    
+    <script src="calculosUt.js"></script>
+    <!-- Enlace a Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+
+@media (min-width: 992px) {
+    /* Centrar el contenido del navbar horizontalmente */
+.navbar-nav {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+}
+
+/* Centrar el contenido del dropdown horizontalmente */
+.dropdown-menu {
+    text-align: left;
+    left: 0%;
+    transform: translateX(-50%);
+}
+}
+</style>
+
+</head>
+<body>
+
+    <!-- Menú de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" style="text-align: center;">
+        <div class="container">
+            <div class="fa-2x">
+                <a href="#inicio">
+                    <img src="/img/logo1.png" alt="Logo" style="width: 60px; height: 30px;" class="fa-beat-fade">
+                </a>
+            </div>
+            <a class="navbar-brand" href="#"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav" style="text-align: center;">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#inicio">Inicio</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Cálculos
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="#1">1- Ganancia</a>
+                            <a class="dropdown-item" href="#2">2- Ancho de Haz</a>
+                            <a class="dropdown-item" href="#3">3- Ángulo Requerido</a>
+                            <a class="dropdown-item" href="#4">4- Angulo de Trayectoria de Sonido</a>
+                            <a class="dropdown-item" href="#5">5- Ley de Snell</a>
+                            <a class="dropdown-item" href="#6">6- Altura de la Indicación</a>
+                            <a class="dropdown-item" href="#7">7- Campo cercano</a>
+                            <a class="dropdown-item" href="#8">8- Impedancia</a>
+                            <a class="dropdown-item" href="#9">9- Longitud de onda</a>
+                            <a class="dropdown-item" href="#10">10- Coeficiente de transmisión</a>
+                            <a class="dropdown-item" href="#11">11- Coeficiente de reflexión</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+
+
+    <div class="container mt-5">
+        <div class="row">
+
+            <!-- Tarjeta 1 -->
+            <div class="col-md-12 mb-5" id="1">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">1-Ganancia</h5>
+                        <form>
+                            <div class="form-group">
+                                <label for="input1">P1 - Amplitud de referencia (%):</label>
+                                <input type="text" class="form-control" id="nro1" placeholder="Ingrese un valor">
+                            </div>
+                            <div class="form-group">
+                                <label for="input2">P2 - Ingresar amplitud del resultado (%):</label>
+                                <input type="text" class="form-control" id="nro2" placeholder="Ingrese un valor">
+                            </div>
+                            <button type="button" class="btn btn-success btn-block" onclick="calcular1()">Calcular</button>
+                        </form>
+                        <div class="mt-3">
+                            <p>Resultado: <span id="resultados1"></span></p>
+                            <p>Fórmula: <span id="formulas1"></span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+   
+            <!-- Tarjeta 2 -->
+            <div class="col-md-12 mb-5" id="2">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">2- Ancho de Haz</h5>
+                        <form>
+                            <div class="form-group">
+                                <label for="nro3">Diámetro de la sonda (mm) D:</label>
+                                <input type="text" class="form-control" id="nro3" placeholder="Ingrese un valor">
+                            </div>
+                            <div class="form-group">
+                                <label for="nro4">Velocidad de ultrasonido (mm/seg):</label>
+                                <input type="text" class="form-control" id="nro4" placeholder="Ingrese un valor">
+                            </div>
+                            <div class="form-group">
+                                <label for="nro5">Frecuencia de ultrasonido (MHz):</label>
+                                <input type="text" class="form-control" id="nro5" placeholder="Ingrese un valor">
+                            </div>                           
+                            <button type="button" class="btn btn-success btn-block" onclick="calcular2()">Calcular</button>
+                        </form>
+                        <div class="mt-3">
+                            <p>Resultado -λ-: <span id="resultados20"></span></p>
+                            <p>Resultado -N = 0,25 * (D^2 / λ )-: <span id="resultados21"></span></p>
+                            <p>-Sen0 = 1,22 * ( λ/D )-: <span id="resultados22"></span></p>
+                            <p>-Sen0 = 1,08* ( λ/D )-: <span id="resultados23"></span></p>
+                            <p>-Sen0 = 0,51 * ( λ/D )-: <span id="resultados24"></span></p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta 3 -->
+            <div class="col-md-12 mb-5" id="3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">3- Angulo Requerido SKL (Ley de Snell)</h5>
+                        <form>
+                            <div class="form-group">
+                                <label for="input1">Grosor del material (mm):</label>
+                                <input type="text" class="form-control" id="nro6" placeholder="Ingrese un valor">
+                            </div>
+                            <div class="form-group">
+                                <label for="nro7">Ángulo requerido (º):</label>
+                                <select class="form-control" id="nro7">
+                                    <option value="45">45</option>
+                                    <option value="60">60</option>
+                                    <option value="70">70</option>
+                                  </select>
+                            </div>
+                           
+                            <button type="button" class="btn btn-success btn-block" onclick="calcular3()">Calcular</button>
+                        </form>
+                        <div class="mt-3">
+                            <p>Resultado -Medio Salto-: <span id="resultados30"></span></p>
+                            <p>Resultado -Salto Completo-: <span id="resultados31"></span></p>
+                            <p>Resultado -Un Medio Salto-: <span id="resultados32"></span></p>
+                            <p>Resultado -Dos Saltos-: <span id="resultados33"></span></p>
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Tarjeta 4 -->
+            <div class="col-md-12 mb-5" id="4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">4- Angulo Requerido en Trayectoria de Sonido</h5>
+                        <form>
+                            <div class="form-group">
+                                <label for="input1">Grosor del material (mm):</label>
+                                <input type="text" class="form-control" id="nro8" placeholder="Ingrese un valor">
+                            </div>
+                            <div class="form-group">
+                                <label for="nro9">Ángulo requerido (º):</label>
+                                <select class="form-control" id="nro9">
+                                    <option value="45">45</option>
+                                    <option value="60">60</option>
+                                    <option value="70">70</option>
+                                  </select>
+                            </div>
+                           
+                            <button type="button" class="btn btn-success btn-block" onclick="calcular4()">Calcular</button>
+                        </form>
+                        <div class="mt-3">
+                            <p>Resultado -Medio Salto-: <span id="resultados40"></span></p>
+                            <p>Resultado -Salto Completo-: <span id="resultados41"></span></p>
+                            <p>Resultado -Un Medio Salto-: <span id="resultados42"></span></p>
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Tarjeta 5 -->
+            <div class="col-md-12 mb-5" id="5">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">5- Ley de Snell</h5>
+                        <form>
+                            <div class="form-group">
+                                <label for="input1">Velocidad incidente Φi (m/s):</label>
+                                <input type="text" class="form-control" id="nro10" placeholder="Ingrese un valor">
+                            </div>
+                            <div class="form-group">
+                                <label for="input2">Ángulo incidente θi (º):</label>
+                                <input type="text" class="form-control" id="nro11" placeholder="Ingrese un valor">
+                            </div>
+                            <div class="form-group">
+                                <label for="input3">Velocidad refractada Φr (m/s):</label>
+                                <input type="text" class="form-control" id="nro12" placeholder="Ingrese un valor">
+                            </div>
+                            <div class="form-group">
+                                <label for="input4">Ángulo refractado θr (º):</label>
+                                <input type="text" class="form-control" id="nro13" placeholder="Ingrese un valor">
+                            </div>
+                           
+                            <button type="button" class="btn btn-success btn-block" onclick="calcular5()">Calcular</button>
+                        </form>
+                        <div class="mt-3">
+                            <p>Resultado -Medio Salto-: <span id="resultados50"></span></p>
+                            <p>Resultado -Salto Completo-: <span id="resultados51"></span></p>
+                         
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Tarjeta 6 -->
+            <div class="col-md-12 mb-5" id="6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">6- Altura de la Indicación</h5>
+                        <form>
+                            <div class="form-group">
+                                <label for="input1">Referencia de Bloque (mm):</label>
+                                <input type="text" class="form-control" id="nro14" placeholder="Ingrese un valor">
+                            </div>
+                            <div class="form-group">
+                                <label for="input2">Referencia de Bloque (mm):</label>
+                                <input type="text" class="form-control" id="nro15" placeholder="Ingrese un valor">
+                            </div>
+                            <div class="form-group">
+                                <label for="input3">Indicación (%):</label>
+                                <input type="text" class="form-control" id="nro16" placeholder="Ingrese un valor">
+                            </div>
+                                                       
+                            <button type="button" class="btn btn-success btn-block" onclick="calcular6()">Calcular</button>
+                        </form>
+                        <div class="mt-3">
+                            <p>Resultado : <span id="resultados60"></span></p>
+                           
+                         
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             <!-- Tarjeta 7 -->
+             <div class="col-md-12 mb-5" id="7">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">7- Campo Cercano</h5>
+                        <form>
+                            <div class="form-group">
+                                <label for="input1">Diámetro de la sonda (mm):</label>
+                                <input type="text" class="form-control" id="nro17" placeholder="Ingrese un valor">
+                            </div>
+                            <div class="form-group">
+                                <label for="input2">Longitud de onda del ultrasonido (mm):</label>
+                                <input type="text" class="form-control" id="nro18" placeholder="Ingrese un valor">
+                            </div>
+                            <div class="form-group">
+                                <label for="input3">Velocidad del ultrasonido (m/s):</label>
+                                <input type="text" class="form-control" id="nro19" placeholder="Ingrese un valor">
+                            </div>
+                            <div class="form-group">
+                                <label for="input4">Frecuencia del ultrasonido (MHz):</label>
+                                <input type="text" class="form-control" id="nro20" placeholder="Ingrese un valor">
+                            </div>
+                           
+                            <button type="button" class="btn btn-success btn-block" onclick="calcular7()">Calcular</button>
+                        </form>
+                        <div class="mt-3">
+                            <p>Resultado - | D*D*f / 4v| -: <span id="resultados70"></span></p>
+                            <p>Resultado - | D*D / 4λ| -: <span id="resultados71"></span></p>
+                         
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta 8 -->
+            <div class="col-md-12 mb-5" id="8">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">8- Impedancia</h5>
+                        <form>
+                            <div class="form-group">
+                                <label for="input1">Diámetro de la sonda (mm):</label>
+                                <input type="text" class="form-control" id="nro80" placeholder="Ingrese un valor">
+                            </div>
+                            <div class="form-group">
+                                <label for="input2">Longitud de onda del ultrasonido (mm):</label>
+                                <input type="text" class="form-control" id="nro81" placeholder="Ingrese un valor">
+                            </div>
+                                                      
+                            <button type="button" class="btn btn-success btn-block" onclick="calcular8()">Calcular</button>
+                        </form>
+                        <div class="mt-3">
+                            <p>Resultado - (kg / m^2 s) -: <span id="resultados80"></span></p>
+                         
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta 9 -->
+            <div class="col-md-12 mb-5" id="9">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">9- Longitud de Onda</h5>
+                        <form>
+                            <div class="form-group">
+                                <label for="input1">Velocidad del ultrasonido (m/s):</label>
+                                <input type="text" class="form-control" id="nro90" placeholder="Ingrese un valor">
+                            </div>
+                            <div class="form-group">
+                                <label for="input2">Frecuencia del ultrasonido (MHz):</label>
+                                <input type="text" class="form-control" id="nro91" placeholder="Ingrese un valor">
+                            </div>
+                                                      
+                            <button type="button" class="btn btn-success btn-block" onclick="calcular9()">Calcular</button>
+                        </form>
+                        <div class="mt-3">
+                            <p>Resultado - (m) -: <span id="resultados90"></span></p>
+                         
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta 10 -->
+            <div class="col-md-12 mb-5" id="10">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">10- Coeficiente de Transmisión</h5>
+                        <form>
+                            <div class="form-group">
+                                <label for="input1">Impedancia Z1 (kg/m^2s):</label>
+                                <input type="text" class="form-control" id="nro100" placeholder="Ingrese un valor">
+                            </div>
+                            <div class="form-group">
+                                <label for="input2">Impedancia Z2 (kg/m^2s):</label>
+                                <input type="text" class="form-control" id="nro101" placeholder="Ingrese un valor">
+                            </div>
+                                                      
+                            <button type="button" class="btn btn-success btn-block" onclick="calcular10()">Calcular</button>
+                        </form>
+                        <div class="mt-3">
+                            <p>Resultado - (m) -: <span id="resultados100"></span></p>
+                         
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta 11 -->
+            <div class="col-md-12 mb-5" id="11">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">11- Coeficiente de Reflexión</h5>
+                        <form>
+                            <div class="form-group">
+                                <label for="input1">Impedancia Z1 (kg/m^2s):</label>
+                                <input type="text" class="form-control" id="nro110" placeholder="Ingrese un valor">
+                            </div>
+                            <div class="form-group">
+                                <label for="input2">Impedancia Z2 (kg/m^2s):</label>
+                                <input type="text" class="form-control" id="nro111" placeholder="Ingrese un valor">
+                            </div>
+                                                      
+                            <button type="button" class="btn btn-success btn-block" onclick="calcular11()">Calcular</button>
+                        </form>
+                        <div class="mt-3">
+                            <p>Resultado - (%) -: <span id="resultados110"></span></p>
+                         
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ... -->
+
+        </div>
+    </div>
+    
+    <!-- Enlace a Bootstrap JavaScript y tu script personalizado -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+</body>
+</html>
