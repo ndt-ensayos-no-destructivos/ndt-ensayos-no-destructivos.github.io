@@ -108,7 +108,6 @@
 
         }
 
-
         function calcular5() {
             // Obtener los valores de entrada
             var input1 = parseFloat(document.getElementById("nro10").value); // A2
@@ -125,7 +124,7 @@
             // Actualizar el resultado y la fórmula en la tarjeta correspondiente
             document.getElementById("resultados50").textContent = resultado1.toFixed(3) + "";
             document.getElementById("resultados51").textContent = resultado2.toFixed(3) + "";
-          }
+        }
           
           function calcular6() {
             // Obtener los valores de entrada
@@ -203,6 +202,320 @@
             // Actualizar el resultado en la tarjeta correspondiente
             document.getElementById("resultados110").textContent = resultado.toFixed(3);
         }
+
+        function verificarDatos1() {
+            var nro1 = document.getElementById("nro1");
+            var nro2 = document.getElementById("nro2");
+            
+            if (nro1.value.trim() === "") {
+                // Faltan datos en nro1, resalta el campo
+                nro1.classList.add("input-sin-datos");
+            } else {
+                // Datos completos en nro1, quita el resaltado
+                nro1.classList.remove("input-sin-datos");
+            }
+        
+            if (nro2.value.trim() === "") {
+                // Faltan datos en nro2, resalta el campo
+                nro2.classList.add("input-sin-datos");
+            } else {
+                // Datos completos en nro2, quita el resaltado
+                nro2.classList.remove("input-sin-datos");
+            }
+            
+            if (nro1.value.trim() === "" || nro2.value.trim() === "") {
+                // Al menos un campo está vacío, mostrar el popover
+                document.getElementById("popover-content").style.display = "block";
+            } else {
+                // Todos los campos están completos, ocultar el popover y realizar el cálculo
+                document.getElementById("popover-content").style.display = "none";
+                calcular1(); // Llama a la función de cálculo
+            }
+        }
+
+        function verificarDatos2() {
+            var nro3 = document.getElementById("nro3");
+            var nro4 = document.getElementById("nro4");
+            var nro5 = document.getElementById("nro5");
+        
+            if (nro3.value.trim() === "") {
+                nro3.classList.add("input-sin-datos");
+            } else {
+                nro3.classList.remove("input-sin-datos");
+            }
+        
+            if (nro4.value.trim() === "") {
+                nro4.classList.add("input-sin-datos");
+            } else {
+                nro4.classList.remove("input-sin-datos");
+            }
+        
+            if (nro5.value.trim() === "") {
+                nro5.classList.add("input-sin-datos");
+            } else {
+                nro5.classList.remove("input-sin-datos");
+            }
+        
+            if (nro3.value.trim() === "" || nro4.value.trim() === "" || nro5.value.trim() === "") {
+                document.getElementById("popover-content2").style.display = "block";
+            } else {
+                document.getElementById("popover-content2").style.display = "none";
+                calcular2();
+            }
+        }
+
+        function verificarDatos3() {
+            var nro6 = document.getElementById("nro6");
+            var nro7 = document.getElementById("nro7");
+        
+            if (nro6.value.trim() === "") {
+                nro6.classList.add("input-sin-datos");
+            } else {
+                nro6.classList.remove("input-sin-datos");
+            }
+        
+            if (nro7.value.trim() === "") {
+                nro7.classList.add("input-sin-datos");
+            } else {
+                nro7.classList.remove("input-sin-datos");
+            }
+        
+            if (nro6.value.trim() === "" || nro7.value.trim() === "") {
+                document.getElementById("popover-content3").style.display = "block";
+            } else {
+                document.getElementById("popover-content3").style.display = "none";
+                calcular3();
+            }
+        }
+        
+        function verificarDatos4() {
+            var nro8 = document.getElementById("nro8");
+            var nro9 = document.getElementById("nro9");
+        
+            if (nro8.value.trim() === "") {
+                nro8.classList.add("input-sin-datos");
+            } else {
+                nro8.classList.remove("input-sin-datos");
+            }
+        
+            if (nro9.value.trim() === "") {
+                nro9.classList.add("input-sin-datos");
+            } else {
+                nro9.classList.remove("input-sin-datos");
+            }
+        
+            if (nro8.value.trim() === "" || nro9.value.trim() === "") {
+                document.getElementById("popover-content4").style.display = "block";
+            } else {
+                document.getElementById("popover-content4").style.display = "none";
+                calcular4();
+            }
+        }
+        
+        function verificarDatos5() {
+            var nro10 = document.getElementById("nro10");
+            var nro11 = document.getElementById("nro11");
+            var nro12 = document.getElementById("nro12");
+            var nro13 = document.getElementById("nro13");
+        
+            if (nro10.value.trim() === "") {
+                nro10.classList.add("input-sin-datos");
+            } else {
+                nro10.classList.remove("input-sin-datos");
+            }
+        
+            if (nro11.value.trim() === "") {
+                nro11.classList.add("input-sin-datos");
+            } else {
+                nro11.classList.remove("input-sin-datos");
+            }
+        
+            if (nro12.value.trim() === "") {
+                nro12.classList.add("input-sin-datos");
+            } else {
+                nro12.classList.remove("input-sin-datos");
+            }
+        
+            if (nro13.value.trim() === "") {
+                nro13.classList.add("input-sin-datos");
+            } else {
+                nro13.classList.remove("input-sin-datos");
+            }
+        
+            if (nro10.value.trim() === "" || nro11.value.trim() === "" || nro12.value.trim() === "" || nro13.value.trim() === "") {
+                document.getElementById("popover-content5").style.display = "block";
+            } else {
+                document.getElementById("popover-content5").style.display = "none";
+                calcular5();
+            }
+        }
+        
+        function verificarDatos6() {
+            var nro14 = document.getElementById("nro14");
+            var nro15 = document.getElementById("nro15");
+            var nro16 = document.getElementById("nro16");
+        
+            if (nro14.value.trim() === "") {
+                nro14.classList.add("input-sin-datos");
+            } else {
+                nro14.classList.remove("input-sin-datos");
+            }
+        
+            if (nro15.value.trim() === "") {
+                nro15.classList.add("input-sin-datos");
+            } else {
+                nro15.classList.remove("input-sin-datos");
+            }
+        
+            if (nro16.value.trim() === "") {
+                nro16.classList.add("input-sin-datos");
+            } else {
+                nro16.classList.remove("input-sin-datos");
+            }
+        
+            if (nro14.value.trim() === "" || nro15.value.trim() === "" || nro16.value.trim() === "") {
+                document.getElementById("popover-content6").style.display = "block";
+            } else {
+                document.getElementById("popover-content6").style.display = "none";
+                calcular6();
+            }
+        }
+        
+        function verificarDatos7() {
+            var nro17 = document.getElementById("nro17");
+            var nro18 = document.getElementById("nro18");
+            var nro19 = document.getElementById("nro19");
+            var nro20 = document.getElementById("nro20");
+        
+            if (nro17.value.trim() === "") {
+                nro17.classList.add("input-sin-datos");
+            } else {
+                nro17.classList.remove("input-sin-datos");
+            }
+        
+            if (nro18.value.trim() === "") {
+                nro18.classList.add("input-sin-datos");
+            } else {
+                nro18.classList.remove("input-sin-datos");
+            }
+        
+            if (nro19.value.trim() === "") {
+                nro19.classList.add("input-sin-datos");
+            } else {
+                nro19.classList.remove("input-sin-datos");
+            }
+        
+            if (nro20.value.trim() === "") {
+                nro20.classList.add("input-sin-datos");
+            } else {
+                nro20.classList.remove("input-sin-datos");
+            }
+        
+            if (nro17.value.trim() === "" || nro18.value.trim() === "" || nro19.value.trim() === "" || nro20.value.trim() === "") {
+                document.getElementById("popover-content7").style.display = "block";
+            } else {
+                document.getElementById("popover-content7").style.display = "none";
+                calcular7();
+            }
+        }
+        
+        function verificarDatos8() {
+            var nro80 = document.getElementById("nro80");
+            var nro81 = document.getElementById("nro81");
+        
+            if (nro80.value.trim() === "") {
+                nro80.classList.add("input-sin-datos");
+            } else {
+                nro80.classList.remove("input-sin-datos");
+            }
+        
+            if (nro81.value.trim() === "") {
+                nro81.classList.add("input-sin-datos");
+            } else {
+                nro81.classList.remove("input-sin-datos");
+            }
+        
+            if (nro80.value.trim() === "" || nro81.value.trim() === "") {
+                document.getElementById("popover-content8").style.display = "block";
+            } else {
+                document.getElementById("popover-content8").style.display = "none";
+                calcular8();
+            }
+        }
+        
+        function verificarDatos9() {
+            var nro90 = document.getElementById("nro90");
+            var nro91 = document.getElementById("nro91");
+        
+            if (nro90.value.trim() === "") {
+                nro90.classList.add("input-sin-datos");
+            } else {
+                nro90.classList.remove("input-sin-datos");
+            }
+        
+            if (nro91.value.trim() === "") {
+                nro91.classList.add("input-sin-datos");
+            } else {
+                nro91.classList.remove("input-sin-datos");
+            }
+        
+            if (nro90.value.trim() === "" || nro91.value.trim() === "") {
+                document.getElementById("popover-content9").style.display = "block";
+            } else {
+                document.getElementById("popover-content9").style.display = "none";
+                calcular9();
+            }
+        }
+        
+        function verificarDatos10() {
+            var nro100 = document.getElementById("nro100");
+            var nro101 = document.getElementById("nro101");
+        
+            if (nro100.value.trim() === "") {
+                nro100.classList.add("input-sin-datos");
+            } else {
+                nro100.classList.remove("input-sin-datos");
+            }
+        
+            if (nro101.value.trim() === "") {
+                nro101.classList.add("input-sin-datos");
+            } else {
+                nro101.classList.remove("input-sin-datos");
+            }
+        
+            if (nro100.value.trim() === "" || nro101.value.trim() === "") {
+                document.getElementById("popover-content10").style.display = "block";
+            } else {
+                document.getElementById("popover-content10").style.display = "none";
+                calcular10();
+            }
+        }
+        
+        function verificarDatos11() {
+            var nro110 = document.getElementById("nro110");
+            var nro111 = document.getElementById("nro111");
+        
+            if (nro110.value.trim() === "") {
+                nro110.classList.add("input-sin-datos");
+            } else {
+                nro110.classList.remove("input-sin-datos");
+            }
+        
+            if (nro111.value.trim() === "") {
+                nro111.classList.add("input-sin-datos");
+            } else {
+                nro111.classList.remove("input-sin-datos");
+            }
+        
+            if (nro110.value.trim() === "" || nro111.value.trim() === "") {
+                document.getElementById("popover-content11").style.display = "block";
+            } else {
+                document.getElementById("popover-content11").style.display = "none";
+                calcular11();
+            }
+        }
+        
+
         
         
         
