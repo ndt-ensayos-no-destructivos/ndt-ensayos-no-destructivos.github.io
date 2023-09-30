@@ -10,7 +10,7 @@
 
             // Asignar el valor formateado de vuelta al campo de entrada
             input.value = valor;
-        }        
+        } 
          
         function calcular1() {
             // Obtener los valores de entrada
