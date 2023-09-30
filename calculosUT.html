@@ -42,7 +42,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" style="text-align: center;">
         <div class="container">
             <div class="fa-2x">
-                <a href="https://ndt-ensayos-no-destructivos.github.io/">
+                <a href="#inicio">
                     <img src="https://github.com/ndt-ensayos-no-destructivos/ndt-ensayos-no-destructivos.github.io/blob/main/imagenes/logo1.png?raw=true" alt="Logo" style="width: 60px; height: 30px;" class="fa-beat-fade">
                 </a>
             </div>
@@ -53,7 +53,7 @@
             <div class="collapse navbar-collapse" id="navbarNav" style="text-align: center;">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="https://ndt-ensayos-no-destructivos.github.io/">Inicio</a>
+                        <a class="nav-link" href="#inicio">Inicio</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -91,11 +91,11 @@
                         <form>
                             <div class="form-group">
                                 <label for="input1">P1 - Amplitud de referencia (%):</label>
-                                <input type="text" class="form-control" id="nro1" placeholder="Ingrese un valor">
+                                <input type="text" class="form-control" id="nro1" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
                             </div>
                             <div class="form-group">
                                 <label for="input2">P2 - Ingresar amplitud del resultado (%):</label>
-                                <input type="text" class="form-control" id="nro2" placeholder="Ingrese un valor">
+                                <input type="text" class="form-control" id="nro2" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
                             </div>
                             <button type="button" class="btn btn-success btn-block" onclick="calcular1()">Calcular</button>
                         </form>
@@ -116,15 +116,15 @@
                         <form>
                             <div class="form-group">
                                 <label for="nro3">Diámetro de la sonda (mm) D:</label>
-                                <input type="text" class="form-control" id="nro3" placeholder="Ingrese un valor">
+                                <input type="text" class="form-control" id="nro3" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
                             </div>
                             <div class="form-group">
                                 <label for="nro4">Velocidad de ultrasonido (mm/seg):</label>
-                                <input type="text" class="form-control" id="nro4" placeholder="Ingrese un valor">
+                                <input type="text" class="form-control" id="nro4" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
                             </div>
                             <div class="form-group">
                                 <label for="nro5">Frecuencia de ultrasonido (MHz):</label>
-                                <input type="text" class="form-control" id="nro5" placeholder="Ingrese un valor">
+                                <input type="text" class="form-control" id="nro5" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
                             </div>                           
                             <button type="button" class="btn btn-success btn-block" onclick="calcular2()">Calcular</button>
                         </form>
@@ -148,7 +148,7 @@
                         <form>
                             <div class="form-group">
                                 <label for="input1">Grosor del material (mm):</label>
-                                <input type="text" class="form-control" id="nro6" placeholder="Ingrese un valor">
+                                <input type="text" class="form-control" id="nro6" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
                             </div>
                             <div class="form-group">
                                 <label for="nro7">Ángulo requerido (º):</label>
@@ -181,7 +181,7 @@
                         <form>
                             <div class="form-group">
                                 <label for="input1">Grosor del material (mm):</label>
-                                <input type="text" class="form-control" id="nro8" placeholder="Ingrese un valor">
+                                <input type="text" class="form-control" id="nro8" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
                             </div>
                             <div class="form-group">
                                 <label for="nro9">Ángulo requerido (º):</label>
@@ -213,26 +213,26 @@
                         <form>
                             <div class="form-group">
                                 <label for="input1">Velocidad incidente Φi (m/s):</label>
-                                <input type="text" class="form-control" id="nro10" placeholder="Ingrese un valor">
+                                <input type="text" class="form-control" id="nro10" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
                             </div>
                             <div class="form-group">
                                 <label for="input2">Ángulo incidente θi (º):</label>
-                                <input type="text" class="form-control" id="nro11" placeholder="Ingrese un valor">
+                                <input type="text" class="form-control" id="nro11" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
                             </div>
                             <div class="form-group">
                                 <label for="input3">Velocidad refractada Φr (m/s):</label>
-                                <input type="text" class="form-control" id="nro12" placeholder="Ingrese un valor">
+                                <input type="text" class="form-control" id="nro12" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
                             </div>
                             <div class="form-group">
                                 <label for="input4">Ángulo refractado θr (º):</label>
-                                <input type="text" class="form-control" id="nro13" placeholder="Ingrese un valor">
+                                <input type="text" class="form-control" id="nro13" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
                             </div>
                            
                             <button type="button" class="btn btn-success btn-block" onclick="calcular5()">Calcular</button>
                         </form>
                         <div class="mt-3">
-                            <p>Resultado -Medio Salto-: <span id="resultados50"></span></p>
-                            <p>Resultado -Salto Completo-: <span id="resultados51"></span></p>
+                            <p>Resultado -sin(θr)=sin(θi)( (Φr)/(Φi) )-: <span id="resultados50"></span></p>
+                            <p>Resultado -sin(θi)=sin(θr)( (Φi)/(Φr) )-: <span id="resultados51"></span></p>
                          
                         </div>
                     </div>
@@ -247,16 +247,16 @@
                         <h5 class="card-title">6- Altura de la Indicación</h5>
                         <form>
                             <div class="form-group">
-                                <label for="input1">Referencia de Bloque (mm):</label>
-                                <input type="text" class="form-control" id="nro14" placeholder="Ingrese un valor">
+                                <label for="input1">Amplitud (%):</label>
+                                <input type="text" class="form-control" id="nro14" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
                             </div>
                             <div class="form-group">
-                                <label for="input2">Referencia de Bloque (mm):</label>
-                                <input type="text" class="form-control" id="nro15" placeholder="Ingrese un valor">
+                                <label for="input2">Altura (mm):</label>
+                                <input type="text" class="form-control" id="nro15" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
                             </div>
                             <div class="form-group">
                                 <label for="input3">Indicación (%):</label>
-                                <input type="text" class="form-control" id="nro16" placeholder="Ingrese un valor">
+                                <input type="text" class="form-control" id="nro16" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
                             </div>
                                                        
                             <button type="button" class="btn btn-success btn-block" onclick="calcular6()">Calcular</button>
@@ -278,19 +278,19 @@
                         <form>
                             <div class="form-group">
                                 <label for="input1">Diámetro de la sonda (mm):</label>
-                                <input type="text" class="form-control" id="nro17" placeholder="Ingrese un valor">
+                                <input type="text" class="form-control" id="nro17" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
                             </div>
                             <div class="form-group">
                                 <label for="input2">Longitud de onda del ultrasonido (mm):</label>
-                                <input type="text" class="form-control" id="nro18" placeholder="Ingrese un valor">
+                                <input type="text" class="form-control" id="nro18" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
                             </div>
                             <div class="form-group">
                                 <label for="input3">Velocidad del ultrasonido (m/s):</label>
-                                <input type="text" class="form-control" id="nro19" placeholder="Ingrese un valor">
+                                <input type="text" class="form-control" id="nro19" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
                             </div>
                             <div class="form-group">
                                 <label for="input4">Frecuencia del ultrasonido (MHz):</label>
-                                <input type="text" class="form-control" id="nro20" placeholder="Ingrese un valor">
+                                <input type="text" class="form-control" id="nro20" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
                             </div>
                            
                             <button type="button" class="btn btn-success btn-block" onclick="calcular7()">Calcular</button>
@@ -311,12 +311,12 @@
                         <h5 class="card-title">8- Impedancia</h5>
                         <form>
                             <div class="form-group">
-                                <label for="input1">Diámetro de la sonda (mm):</label>
-                                <input type="text" class="form-control" id="nro80" placeholder="Ingrese un valor">
+                                <label for="input1">Densidad del material (kg/m^3):</label>
+                                <input type="text" class="form-control" id="nro80" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
                             </div>
                             <div class="form-group">
-                                <label for="input2">Longitud de onda del ultrasonido (mm):</label>
-                                <input type="text" class="form-control" id="nro81" placeholder="Ingrese un valor">
+                                <label for="input2">Velocidad del ultrasonido (m/s):</label>
+                                <input type="text" class="form-control" id="nro81" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
                             </div>
                                                       
                             <button type="button" class="btn btn-success btn-block" onclick="calcular8()">Calcular</button>
@@ -337,11 +337,11 @@
                         <form>
                             <div class="form-group">
                                 <label for="input1">Velocidad del ultrasonido (m/s):</label>
-                                <input type="text" class="form-control" id="nro90" placeholder="Ingrese un valor">
+                                <input type="text" class="form-control" id="nro90" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
                             </div>
                             <div class="form-group">
                                 <label for="input2">Frecuencia del ultrasonido (MHz):</label>
-                                <input type="text" class="form-control" id="nro91" placeholder="Ingrese un valor">
+                                <input type="text" class="form-control" id="nro91" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
                             </div>
                                                       
                             <button type="button" class="btn btn-success btn-block" onclick="calcular9()">Calcular</button>
@@ -362,11 +362,11 @@
                         <form>
                             <div class="form-group">
                                 <label for="input1">Impedancia Z1 (kg/m^2s):</label>
-                                <input type="text" class="form-control" id="nro100" placeholder="Ingrese un valor">
+                                <input type="text" class="form-control" id="nro100" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
                             </div>
                             <div class="form-group">
                                 <label for="input2">Impedancia Z2 (kg/m^2s):</label>
-                                <input type="text" class="form-control" id="nro101" placeholder="Ingrese un valor">
+                                <input type="text" class="form-control" id="nro101" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
                             </div>
                                                       
                             <button type="button" class="btn btn-success btn-block" onclick="calcular10()">Calcular</button>
@@ -387,11 +387,11 @@
                         <form>
                             <div class="form-group">
                                 <label for="input1">Impedancia Z1 (kg/m^2s):</label>
-                                <input type="text" class="form-control" id="nro110" placeholder="Ingrese un valor">
+                                <input type="text" class="form-control" id="nro110" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
                             </div>
                             <div class="form-group">
                                 <label for="input2">Impedancia Z2 (kg/m^2s):</label>
-                                <input type="text" class="form-control" id="nro111" placeholder="Ingrese un valor">
+                                <input type="text" class="form-control" id="nro111" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
                             </div>
                                                       
                             <button type="button" class="btn btn-success btn-block" onclick="calcular11()">Calcular</button>

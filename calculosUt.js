@@ -1,3 +1,17 @@
+        function formatoNumero(input) {
+            // Obtener el valor actual del campo de entrada
+            var valor = input.value;
+
+            // Reemplazar comas por puntos
+            valor = valor.replace(/,/g, '.');
+
+            // Eliminar caracteres que no sean dígitos o puntos
+            valor = valor.replace(/[^0-9.]/g, '');
+
+            // Asignar el valor formateado de vuelta al campo de entrada
+            input.value = valor;
+        }        
+        
         function calcular1() {
             // Obtener los valores de entrada
             var input1 = parseFloat(document.getElementById("nro1").value);
