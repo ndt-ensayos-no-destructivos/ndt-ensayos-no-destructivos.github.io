@@ -14,7 +14,7 @@
     <title>Calculadora Ultrasonido</title>
     
     <script src="calculosUt.js"></script>
-    <!-- Enlace a Bootstrap CSS --> 
+    <!-- Enlace a Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <style>
 
@@ -94,9 +94,6 @@
         </div>
     </nav>
 
-
-
-
     <div class="container mt-5">
         <div class="row">
 
@@ -114,7 +111,20 @@
                                 <label for="input2">P2 - Ingresar amplitud del resultado (%):</label>
                                 <input type="text" class="form-control" id="nro2" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
                             </div>
-                            <button type="button" class="btn btn-success btn-block" onclick="verificarDatos1()">Calcular</button>
+                            <div class="row">
+                                <!-- Botón de cálculo (visible en dispositivos grandes) -->
+                                <div class="col-md-9">
+                                    <!-- Botón de cálculo visible en dispositivos grandes -->
+                                    <button type="button" class="btn btn-success btn-block" onclick="verificarDatos1()">Calcular</button>
+                                </div>
+
+                                <!-- Botón de información (visible en dispositivos grandes) -->
+                                <div class="col-md-3">
+                                    <!-- Botón de información visible en dispositivos grandes -->
+                                    <a href="#mi-popup-1" class="btn btn-info btn-block" data-toggle="modal">Información</a>
+                                </div>
+                            </div>
+
                             <!-- Elemento popover oculto -->
                             <div id="popover-content" class="alert alert-danger" role="alert" style="display: none; margin-top: 10px;">
                                 <div class="alert alert-danger" role="alert">
@@ -129,360 +139,790 @@
                     </div>
                 </div>
             </div>
+
+                    <!-- INFO - Tarjeta 1 -->
+                    <div class="modal fade" id="mi-popup-1">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <!-- Contenido del popup -->
+                                <div class="modal-header">
+                                    <h5 class="modal-title">1- Ganancia o pérdida en decibelios</h5>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>El dB es una unidad logarítmica que describe una relación entre dos mediciones.</p>
+                                    <p>La ecuación utilizada para describir la diferencia en intensidad entre dos mediciones ultrasónicas u otras mediciones de sonido es:</p>
+                                    <p>△l(dB)=20log(P2/P1)</p></br>
+                                    <p>dB = Decibelio</p>
+                                    <p>P1 = Amplitud de presión 1</p>
+                                    <p>P2 = Amplitud de presión 2</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <!-- Botón para cerrar el popup -->
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
             
-   
-<!-- Tarjeta 2 -->
-<div class="col-md-12 mb-5" id="2">
-    <div class="card">
-        <div class="card-body">
-            <h5 class="card-title">2- Ancho de Haz</h5>
-            <form>
-                <div class="form-group">
-                    <label for="nro3">Diámetro de la sonda (mm) D:</label>
-                    <input type="text" class="form-control" id="nro3" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
-                </div>
-                <div class="form-group">
-                    <label for="nro4">Velocidad de ultrasonido (mm/seg):</label>
-                    <input type="text" class="form-control" id="nro4" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
-                </div>
-                <div class="form-group">
-                    <label for="nro5">Frecuencia de ultrasonido (MHz):</label>
-                    <input type="text" class="form-control" id="nro5" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
-                </div>                           
-                <button type="button" class="btn btn-success btn-block" onclick="verificarDatos2()">Calcular</button>
-                <!-- Elemento popover oculto -->
-                <div id="popover-content2" class="alert alert-danger" role="alert" style="display: none; margin-top: 10px;">
-                    <div class="alert alert-danger" role="alert">
-                        Debe ingresar todos los datos para realizar el cálculo.
+            <!-- Tarjeta 2 -->
+            <div class="col-md-12 mb-5" id="2">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">2- Ancho de Haz</h5>
+                        <form>
+                            <div class="form-group">
+                                <label for="nro3">Diámetro de la sonda (mm) D:</label>
+                                <input type="text" class="form-control" id="nro3" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
+                            </div>
+                            <div class="form-group">
+                                <label for="nro4">Velocidad de ultrasonido (mm/seg):</label>
+                                <input type="text" class="form-control" id="nro4" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
+                            </div>
+                            <div class="form-group">
+                                <label for="nro5">Frecuencia de ultrasonido (MHz):</label>
+                                <input type="text" class="form-control" id="nro5" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
+                            </div>                           
+                            <div class="row">
+                                <!-- Botón de cálculo (visible en dispositivos grandes) -->
+                                <div class="col-md-9">
+                                    <!-- Botón de cálculo visible en dispositivos grandes -->
+                                    <button type="button" class="btn btn-success btn-block" onclick="verificarDatos2()">Calcular</button>
+                                </div>
+
+                                <!-- Botón de información (visible en dispositivos grandes) -->
+                                <div class="col-md-3">
+                                    <!-- Botón de información visible en dispositivos grandes -->
+                                    <a href="#mi-popup-2" class="btn btn-info btn-block" data-toggle="modal">Información</a>
+                                </div>
+                            </div>
+                            <!-- Elemento popover oculto -->
+                            <div id="popover-content2" class="alert alert-danger" role="alert" style="display: none; margin-top: 10px;">
+                                <div class="alert alert-danger" role="alert">
+                                    Debe ingresar todos los datos para realizar el cálculo.
+                                </div>
+                            </div>
+                        </form>
+                        <div class="mt-3">
+                            <p>Resultado -λ-: <span id="resultados20" class="resultado-grande"></span></p>
+                            <p>Resultado -N = 0,25 * (D^2 / λ )-: <span id="resultados21" class="resultado-grande"></span></p>
+                            <p>-Sen0 = 1,22 * ( λ/D )-: <span id="resultados22" class="resultado-grande"></span></p>
+                            <p>-Sen0 = 1,08* ( λ/D )-: <span id="resultados23" class="resultado-grande"></span></p>
+                            <p>-Sen0 = 0,51 * ( λ/D )-: <span id="resultados24" class="resultado-grande"></span></p>
+                        </div>
                     </div>
                 </div>
-            </form>
-            <div class="mt-3">
-                <p>Resultado -λ-: <span id="resultados20" class="resultado-grande"></span></p>
-                <p>Resultado -N = 0,25 * (D^2 / λ )-: <span id="resultados21" class="resultado-grande"></span></p>
-                <p>-Sen0 = 1,22 * ( λ/D )-: <span id="resultados22" class="resultado-grande"></span></p>
-                <p>-Sen0 = 1,08* ( λ/D )-: <span id="resultados23" class="resultado-grande"></span></p>
-                <p>-Sen0 = 0,51 * ( λ/D )-: <span id="resultados24" class="resultado-grande"></span></p>
             </div>
-        </div>
-    </div>
-</div>
 
-<!-- Tarjeta 3 -->
-<div class="col-md-12 mb-5" id="3">
-    <div class="card">
-        <div class="card-body">
-            <h5 class="card-title">3- Angulo Requerido SKL (Ley de Snell)</h5>
-            <form>
-                <div class="form-group">
-                    <label for="nro6">Grosor del material (mm):</label>
-                    <input type="text" class="form-control" id="nro6" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
-                </div>
-                <div class="form-group">
-                    <label for="nro7">Ángulo requerido (º):</label>
-                    <select class="form-control" id="nro7">
-                        <option value="45">45</option>
-                        <option value="60">60</option>
-                        <option value="70">70</option>
-                    </select>
-                </div>
-                           
-                <button type="button" class="btn btn-success btn-block" onclick="verificarDatos3()">Calcular</button>
-                <!-- Elemento popover oculto -->
-                <div id="popover-content3" class="alert alert-danger" role="alert" style="display: none; margin-top: 10px;">
-                    <div class="alert alert-danger" role="alert">
-                        Debe ingresar todos los datos para realizar el cálculo.
+                    <!-- INFO - Tarjeta 2 -->
+                    <div class="modal fade" id="mi-popup-2">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <!-- Contenido del popup -->
+                                <div class="modal-header">
+                                    <h5 class="modal-title">2- Cálculo de la propagación del haz a la mitad</h5>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>La divergencia del haz de sonido a medida que viaja a través de un medio.
+                                        Específicamente, el ángulo sólido que contiene el lóbulo principal del haz en el campo lejano (suposición de sonda circular).
+                                        </p>
+                                    <p>sin(θ/2)= k(λ/D) or sin(θ/2)=k(θ/Df)</p>
+                                    <p>N = Longitud del campo cercano (mm)</p>
+                                    <p>D = Diámetro de la sonda (mm)</p>
+                                    <p>λ = Longitud de onda (mm)</p>
+                                    <p>θ = Velocidad (m/s)</p>
+                                    <p>f = Frecuencia (Hz).</p>
+                                    <p>k = 0.51 (para 6dB), k = 1.08 (para 20dB), k = 1.22 (para el borde)</p>
+                                    <p>θ/2 = Ángulo de divergencia del haz desde la línea central hasta el punto donde la señal está a la mitad de su intensidad.</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <!-- Botón para cerrar el popup -->
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+            <!-- Tarjeta 3 -->
+            <div class="col-md-12 mb-5" id="3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">3- Angulo Requerido SKL (Ley de Snell)</h5>
+                        <form>
+                            <div class="form-group">
+                                <label for="nro6">Grosor del material (mm):</label>
+                                <input type="text" class="form-control" id="nro6" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
+                            </div>
+                            <div class="form-group">
+                                <label for="nro7">Ángulo requerido (º):</label>
+                                <select class="form-control" id="nro7">
+                                    <option value="45">45</option>
+                                    <option value="60">60</option>
+                                    <option value="70">70</option>
+                                </select>
+                            </div>
+                                    
+                            <div class="row">
+                                <!-- Botón de cálculo (visible en dispositivos grandes) -->
+                                <div class="col-md-9">
+                                    <!-- Botón de cálculo visible en dispositivos grandes -->
+                                    <button type="button" class="btn btn-success btn-block" onclick="verificarDatos3()">Calcular</button>
+                                </div>
+
+                                <!-- Botón de información (visible en dispositivos grandes) -->
+                                <div class="col-md-3">
+                                    <!-- Botón de información visible en dispositivos grandes -->
+                                    <a href="#mi-popup-3" class="btn btn-info btn-block" data-toggle="modal">Información</a>
+                                </div>
+                            </div>
+
+                            <!-- Elemento popover oculto -->
+                            <div id="popover-content3" class="alert alert-danger" role="alert" style="display: none; margin-top: 10px;">
+                                <div class="alert alert-danger" role="alert">
+                                    Debe ingresar todos los datos para realizar el cálculo.
+                                </div>
+                            </div>
+                        </form>
+                        <div class="mt-3">
+                            <p>Resultado -Medio Salto-: <span id="resultados30" class="resultado-grande"></span></p>
+                            <p>Resultado -Salto Completo-: <span id="resultados31" class="resultado-grande"></span></p>
+                            <p>Resultado -Un Medio Salto-: <span id="resultados32" class="resultado-grande"></span></p>
+                            <p>Resultado -Dos Saltos-: <span id="resultados33" class="resultado-grande"></span></p>
+                        </div>
                     </div>
                 </div>
-            </form>
-            <div class="mt-3">
-                <p>Resultado -Medio Salto-: <span id="resultados30" class="resultado-grande"></span></p>
-                <p>Resultado -Salto Completo-: <span id="resultados31" class="resultado-grande"></span></p>
-                <p>Resultado -Un Medio Salto-: <span id="resultados32" class="resultado-grande"></span></p>
-                <p>Resultado -Dos Saltos-: <span id="resultados33" class="resultado-grande"></span></p>
             </div>
-        </div>
-    </div>
-</div>
 
+                    <!-- INFO - Tarjeta 3 -->
+                    <div class="modal fade" id="mi-popup-3">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <!-- Contenido del popup -->
+                                <div class="modal-header">
+                                    <h5 class="modal-title">3- Angulo Requerido SKL (Ley de Snell)</h5>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Este cálculo se utiliza para determinar diversos resultados relacionados con la refracción de ondas ultrasónicas al pasar de un medio a otro, siguiendo la Ley de Snell. Aquí se describe en detalle cómo funciona este cálculo:</p>
+                                    <p>Grosor del Material (mm): Este valor se refiere al espesor del material que se va a inspeccionar mediante ultrasonidos. Es importante conocer este dato para determinar cómo se propagarán las ondas ultrasónicas a través del material.</p>
+                                    <p>Ángulo Requerido (º): Este ángulo representa el ángulo de incidencia de las ondas ultrasónicas al ingresar al material. Dependiendo de este ángulo, las ondas pueden refractarse de diferentes maneras al cruzar la interfaz entre dos medios con diferentes velocidades de propagación.</p>
+                                    <br>
+                                    <p> Los resultados se dividen en las siguientes categorías:</p>
+                                    <p>Resultado - Medio Salto: Este resultado proporciona información sobre la onda reflejada después de que incide en la interfaz del material. Puede indicar si se produce una reflexión significativa o una refracción en la interfaz.</p>
+                                    <p>Resultado - Salto Completo: Aquí se evalúa cómo se comporta la onda ultrasónica cuando incide en la interfaz con el ángulo requerido. Dependiendo de este ángulo, la onda puede reflejarse por completo o transmitirse a través del material.</p>
+                                    <p>Resultado - Un Medio Salto: Este resultado se relaciona con la refracción de la onda al pasar de un medio a otro. Indica cómo se desviará la onda ultrasónica al atravesar la interfaz, lo que puede ser útil para comprender la trayectoria de la onda dentro del material.</p>
+                                    <p>Resultado - Dos Saltos: Este resultado evalúa el comportamiento de la onda ultrasónica cuando incide en la interfaz y se refleja dos veces, una vez en cada superficie del material. Esto puede proporcionar información sobre la atenuación y la intensidad de la onda en diferentes puntos.</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <!-- Botón para cerrar el popup -->
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-<!-- Tarjeta 4 -->
-<div class="col-md-12 mb-5" id="4">
-    <div class="card">
-        <div class="card-body">
-            <h5 class="card-title">4- Angulo Requerido en Trayectoria de Sonido</h5>
-            <form>
-                <div class="form-group">
-                    <label for="nro8">Grosor del material (mm):</label>
-                    <input type="text" class="form-control" id="nro8" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
-                </div>
-                <div class="form-group">
-                    <label for="nro9">Ángulo requerido (º):</label>
-                    <select class="form-control" id="nro9">
-                        <option value="45">45</option>
-                        <option value="60">60</option>
-                        <option value="70">70</option>
-                    </select>
-                </div>
-                           
-                <button type="button" class="btn btn-success btn-block" onclick="verificarDatos4()">Calcular</button>
-                <!-- Elemento popover oculto -->
-                <div id="popover-content4" class="alert alert-danger" role="alert" style="display: none; margin-top: 10px;">
-                    <div class="alert alert-danger" role="alert">
-                        Debe ingresar todos los datos para realizar el cálculo.
+            <!-- Tarjeta 4 -->
+            <div class="col-md-12 mb-5" id="4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">4- Angulo Requerido en Trayectoria de Sonido</h5>
+                        <form>
+                            <div class="form-group">
+                                <label for="nro8">Grosor del material (mm):</label>
+                                <input type="text" class="form-control" id="nro8" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
+                            </div>
+                            <div class="form-group">
+                                <label for="nro9">Ángulo requerido (º):</label>
+                                <select class="form-control" id="nro9">
+                                    <option value="45">45</option>
+                                    <option value="60">60</option>
+                                    <option value="70">70</option>
+                                </select>
+                            </div>
+                                    
+                            <div class="row">
+                                <!-- Botón de cálculo (visible en dispositivos grandes) -->
+                                <div class="col-md-9">
+                                    <!-- Botón de cálculo visible en dispositivos grandes -->
+                                    <button type="button" class="btn btn-success btn-block" onclick="verificarDatos4()">Calcular</button>
+                                </div>
+
+                                <!-- Botón de información (visible en dispositivos grandes) -->
+                                <div class="col-md-3">
+                                    <!-- Botón de información visible en dispositivos grandes -->
+                                    <a href="#mi-popup-4" class="btn btn-info btn-block" data-toggle="modal">Información</a>
+                                </div>
+                            </div>
+
+                            <!-- Elemento popover oculto -->
+                            <div id="popover-content4" class="alert alert-danger" role="alert" style="display: none; margin-top: 10px;">
+                                <div class="alert alert-danger" role="alert">
+                                    Debe ingresar todos los datos para realizar el cálculo.
+                                </div>
+                            </div>
+                        </form>
+                        <div class="mt-3">
+                            <p>Resultado -Medio Salto-: <span id="resultados40" class="resultado-grande"></span></p>
+                            <p>Resultado -Salto Completo-: <span id="resultados41" class="resultado-grande"></span></p>
+                            <p>Resultado -Un Medio Salto-: <span id="resultados42" class="resultado-grande"></span></p>
+                        </div>
                     </div>
                 </div>
-            </form>
-            <div class="mt-3">
-                <p>Resultado -Medio Salto-: <span id="resultados40" class="resultado-grande"></span></p>
-                <p>Resultado -Salto Completo-: <span id="resultados41" class="resultado-grande"></span></p>
-                <p>Resultado -Un Medio Salto-: <span id="resultados42" class="resultado-grande"></span></p>
             </div>
-        </div>
-    </div>
-</div>
 
-<!-- Tarjeta 5 -->
-<div class="col-md-12 mb-5" id="5">
-    <div class="card">
-        <div class="card-body">
-            <h5 class="card-title">5- Ley de Snell</h5>
-            <form>
-                <div class="form-group">
-                    <label for="nro10">Velocidad incidente Φi (m/s):</label>
-                    <input type="text" class="form-control" id="nro10" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
-                </div>
-                <div class="form-group">
-                    <label for="nro11">Ángulo incidente θi (º):</label>
-                    <input type="text" class="form-control" id="nro11" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
-                </div>
-                <div class="form-group">
-                    <label for="nro12">Velocidad refractada Φr (m/s):</label>
-                    <input type="text" class="form-control" id="nro12" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
-                </div>
-                <div class="form-group">
-                    <label for="nro13">Ángulo refractado θr (º):</label>
-                    <input type="text" class="form-control" id="nro13" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
-                </div>
-                           
-                <button type="button" class="btn btn-success btn-block" onclick="verificarDatos5()">Calcular</button>
-                <!-- Elemento popover oculto -->
-                <div id="popover-content5" class="alert alert-danger" role="alert" style="display: none; margin-top: 10px;">
-                    <div class="alert alert-danger" role="alert">
-                        Debe ingresar todos los datos para realizar el cálculo.
+                    <!-- INFO - Tarjeta 4 -->
+                    <div class="modal fade" id="mi-popup-4">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <!-- Contenido del popup -->
+                                <div class="modal-header">
+                                    <h5 class="modal-title">4- Cálculo de Trayectoria del Sonido</h5>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>En pruebas de ángulo de haz en selecciones de placas o cilindros, se refiere a la trayectoria del haz ultrasónico en el objeto de prueba desde el punto de entrada en la superficie frontal hasta la superficie posterior y su reflejo de nuevo a la superficie frontal.</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <!-- Botón para cerrar el popup -->
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+            <!-- Tarjeta 5 -->
+            <div class="col-md-12 mb-5" id="5">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">5- Ley de Snell</h5>
+                        <form>
+                            <div class="form-group">
+                                <label for="nro10">Velocidad incidente Φi (m/s):</label>
+                                <input type="text" class="form-control" id="nro10" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
+                            </div>
+                            <div class="form-group">
+                                <label for="nro11">Ángulo incidente θi (º):</label>
+                                <input type="text" class="form-control" id="nro11" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
+                            </div>
+                            <div class="form-group">
+                                <label for="nro12">Velocidad refractada Φr (m/s):</label>
+                                <input type="text" class="form-control" id="nro12" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
+                            </div>
+                            <div class="form-group">
+                                <label for="nro13">Ángulo refractado θr (º):</label>
+                                <input type="text" class="form-control" id="nro13" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
+                            </div>
+                                    
+                            <div class="row">
+                                <!-- Botón de cálculo (visible en dispositivos grandes) -->
+                                <div class="col-md-9">
+                                    <!-- Botón de cálculo visible en dispositivos grandes -->
+                                    <button type="button" class="btn btn-success btn-block" onclick="verificarDatos5()">Calcular</button>
+                                </div>
+
+                                <!-- Botón de información (visible en dispositivos grandes) -->
+                                <div class="col-md-3">
+                                    <!-- Botón de información visible en dispositivos grandes -->
+                                    <a href="#mi-popup-5" class="btn btn-info btn-block" data-toggle="modal">Información</a>
+                                </div>
+                            </div>
+
+                            <!-- Elemento popover oculto -->
+                            <div id="popover-content5" class="alert alert-danger" role="alert" style="display: none; margin-top: 10px;">
+                                <div class="alert alert-danger" role="alert">
+                                    Debe ingresar todos los datos para realizar el cálculo.
+                                </div>
+                            </div>
+                        </form>
+                        <div class="mt-3">
+                            <p>Resultado -sin(θr)=sin(θi)( (Φr)/(Φi) )-: <span id="resultados50" class="resultado-grande"></span></p>
+                            <p>Resultado -sin(θi)=sin(θr)( (Φi)/(Φr) )-: <span id="resultados51" class="resultado-grande"></span></p>
+                        </div>
                     </div>
                 </div>
-            </form>
-            <div class="mt-3">
-                <p>Resultado -sin(θr)=sin(θi)( (Φr)/(Φi) )-: <span id="resultados50" class="resultado-grande"></span></p>
-                <p>Resultado -sin(θi)=sin(θr)( (Φi)/(Φr) )-: <span id="resultados51" class="resultado-grande"></span></p>
             </div>
-        </div>
-    </div>
-</div>
 
-<!-- Tarjeta 6 -->
-<div class="col-md-12 mb-5" id="6">
-    <div class="card">
-        <div class="card-body">
-            <h5 class="card-title">6- Altura de la Indicación</h5>
-            <form>
-                <div class="form-group">
-                    <label for="nro14">Amplitud (%):</label>
-                    <input type="text" class="form-control" id="nro14" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
-                </div>
-                <div class="form-group">
-                    <label for="nro15">Altura (mm):</label>
-                    <input type="text" class="form-control" id="nro15" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
-                </div>
-                <div class="form-group">
-                    <label for="nro16">Indicación (%):</label>
-                    <input type="text" class="form-control" id="nro16" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
-                </div>
-                                                       
-                <button type="button" class="btn btn-success btn-block" onclick="verificarDatos6()">Calcular</button>
-                <!-- Elemento popover oculto -->
-                <div id="popover-content6" class="alert alert-danger" role="alert" style="display: none; margin-top: 10px;">
-                    <div class="alert alert-danger" role="alert">
-                        Debe ingresar todos los datos para realizar el cálculo.
+                    <!-- INFO - Tarjeta 5 -->
+                    <div class="modal fade" id="mi-popup-5">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <!-- Contenido del popup -->
+                                <div class="modal-header">
+                                    <h5 class="modal-title">5- Ley de Snell</h5>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>La ley física que define la relación entre el ángulo de incidencia y el ángulo de refracción.</p>
+                                    <p>sin(θi)=sin(θr)( (Φi)/(Φr) ) or sin(θr)=sin(θi)( (Φr)/(Φi) )</p>
+                                    <p>θi = Ángulo de la onda incidente.</p>
+                                    <p>θr = Ángulo de la onda refractada.</p>
+                                    <p>Φi = Velocidad de la onda incidente (m/s).</p>
+                                    <p>Φr = Velocidad de la onda refractada (m/s).</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <!-- Botón para cerrar el popup -->
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+            <!-- Tarjeta 6 -->
+            <div class="col-md-12 mb-5" id="6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">6- Altura de la Indicación</h5>
+                        <form>
+                            <div class="form-group">
+                                <label for="nro14">Amplitud (%):</label>
+                                <input type="text" class="form-control" id="nro14" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
+                            </div>
+                            <div class="form-group">
+                                <label for="nro15">Altura (mm):</label>
+                                <input type="text" class="form-control" id="nro15" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
+                            </div>
+                            <div class="form-group">
+                                <label for="nro16">Indicación (%):</label>
+                                <input type="text" class="form-control" id="nro16" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
+                            </div>
+                                                                
+                            <div class="row">
+                                <!-- Botón de cálculo (visible en dispositivos grandes) -->
+                                <div class="col-md-9">
+                                    <!-- Botón de cálculo visible en dispositivos grandes -->
+                                    <button type="button" class="btn btn-success btn-block" onclick="verificarDatos6()">Calcular</button>
+                                </div>
+
+                                <!-- Botón de información (visible en dispositivos grandes) -->
+                                <div class="col-md-3">
+                                    <!-- Botón de información visible en dispositivos grandes -->
+                                    <a href="#mi-popup-6" class="btn btn-info btn-block" data-toggle="modal">Información</a>
+                                </div>
+                            </div>
+
+                            <!-- Elemento popover oculto -->
+                            <div id="popover-content6" class="alert alert-danger" role="alert" style="display: none; margin-top: 10px;">
+                                <div class="alert alert-danger" role="alert">
+                                    Debe ingresar todos los datos para realizar el cálculo.
+                                </div>
+                            </div>
+                        </form>
+                        <div class="mt-3">
+                            <p>Resultado : <span id="resultados60" class="resultado-grande"></span></p>
+                        </div>
                     </div>
                 </div>
-            </form>
-            <div class="mt-3">
-                <p>Resultado : <span id="resultados60" class="resultado-grande"></span></p>
             </div>
-        </div>
-    </div>
-</div>
 
+                    <!-- INFO - Tarjeta 6 -->
+                    <div class="modal fade" id="mi-popup-6">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <!-- Contenido del popup -->
+                                <div class="modal-header">
+                                    <h5 class="modal-title">6- Altura de la Indicación</h5>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Esta medición se utiliza para determinar la ubicación y el tamaño de posibles defectos o discontinuidades en un material. Aquí se describen los pasos y los elementos clave de este cálculo:</p>
+                                    <p>Amplitud (%): La amplitud se refiere a la magnitud de la señal ultrasónica que se refleja desde una discontinuidad o un defecto en el material. Esta amplitud suele expresarse como un porcentaje y proporciona información sobre la intensidad de la señal reflejada.</p>
+                                    <p>Altura (mm): La altura se relaciona con la distancia desde la superficie del material hasta el punto en el que se produce la reflexión de la onda ultrasónica. Es esencial para determinar la profundidad a la que se encuentra una discontinuidad.</p>
+                                    <p>Indicación (%): La indicación se calcula a partir de la relación entre la amplitud de la señal reflejada y la amplitud de la señal incidente. Esta relación se expresa nuevamente como un porcentaje y se utiliza para evaluar la severidad de un defecto. Una indicación más alta generalmente indica un defecto más grande o más grave.</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <!-- Botón para cerrar el popup -->
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-<!-- Tarjeta 7 -->
-<div class="col-md-12 mb-5" id="7">
-    <div class="card">
-        <div class="card-body">
-            <h5 class="card-title">7- Campo Cercano</h5>
-            <form>
-                <div class="form-group">
-                    <label for="nro17">Diámetro de la sonda (mm):</label>
-                    <input type="text" class="form-control" id="nro17" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
-                </div>
-                <div class="form-group">
-                    <label for="nro18">Longitud de onda del ultrasonido (mm):</label>
-                    <input type="text" class="form-control" id="nro18" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
-                </div>
-                <div class="form-group">
-                    <label for="nro19">Velocidad del ultrasonido (m/s):</label>
-                    <input type="text" class="form-control" id="nro19" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
-                </div>
-                <div class="form-group">
-                    <label for="nro20">Frecuencia del ultrasonido (MHz):</label>
-                    <input type="text" class="form-control" id="nro20" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
-                </div>
-                           
-                <button type="button" class="btn btn-success btn-block" onclick="verificarDatos7()">Calcular</button>
-                <!-- Elemento popover oculto -->
-                <div id="popover-content7" class="alert alert-danger" role="alert" style="display: none; margin-top: 10px;">
-                    <div class="alert alert-danger" role="alert">
-                        Debe ingresar todos los datos para realizar el cálculo.
+            <!-- Tarjeta 7 -->
+            <div class="col-md-12 mb-5" id="7">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">7- Campo Cercano</h5>
+                        <form>
+                            <div class="form-group">
+                                <label for="nro17">Diámetro de la sonda (mm):</label>
+                                <input type="text" class="form-control" id="nro17" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
+                            </div>
+                            <div class="form-group">
+                                <label for="nro18">Longitud de onda del ultrasonido (mm):</label>
+                                <input type="text" class="form-control" id="nro18" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
+                            </div>
+                            <div class="form-group">
+                                <label for="nro19">Velocidad del ultrasonido (m/s):</label>
+                                <input type="text" class="form-control" id="nro19" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
+                            </div>
+                            <div class="form-group">
+                                <label for="nro20">Frecuencia del ultrasonido (MHz):</label>
+                                <input type="text" class="form-control" id="nro20" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
+                            </div>
+                                    
+                            <div class="row">
+                                <!-- Botón de cálculo (visible en dispositivos grandes) -->
+                                <div class="col-md-9">
+                                    <!-- Botón de cálculo visible en dispositivos grandes -->
+                                    <button type="button" class="btn btn-success btn-block" onclick="verificarDatos7()">Calcular</button>
+                                </div>
+
+                                <!-- Botón de información (visible en dispositivos grandes) -->
+                                <div class="col-md-3">
+                                    <!-- Botón de información visible en dispositivos grandes -->
+                                    <a href="#mi-popup-7" class="btn btn-info btn-block" data-toggle="modal">Información</a>
+                                </div>
+                            </div>
+
+                            <!-- Elemento popover oculto -->
+                            <div id="popover-content7" class="alert alert-danger" role="alert" style="display: none; margin-top: 10px;">
+                                <div class="alert alert-danger" role="alert">
+                                    Debe ingresar todos los datos para realizar el cálculo.
+                                </div>
+                            </div>
+                        </form>
+                        <div class="mt-3">
+                            <p>Resultado - | D*D*f / 4v| -: <span id="resultados70" class="resultado-grande"></span></p>
+                            <p>Resultado - | D*D / 4λ| -: <span id="resultados71" class="resultado-grande"></span></p>
+                        </div>
                     </div>
                 </div>
-            </form>
-            <div class="mt-3">
-                <p>Resultado - | D*D*f / 4v| -: <span id="resultados70" class="resultado-grande"></span></p>
-                <p>Resultado - | D*D / 4λ| -: <span id="resultados71" class="resultado-grande"></span></p>
             </div>
-        </div>
-    </div>
-</div>
 
+                    <!-- INFO - Tarjeta 7 -->
+                    <div class="modal fade" id="mi-popup-7">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <!-- Contenido del popup -->
+                                <div class="modal-header">
+                                    <h5 class="modal-title">7- Cálculo del campo cercano</h5>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Cuando el sonido sale de un transductor ultrasónico, no es solo una onda producida desde un solo punto, sino toda una frente de onda producida desde múltiples puntos a lo largo de la cara del transductor. La intensidad del haz varía en el material adyacente al transductor debido a la interferencia constructiva y destructiva de estas ondas individuales, lo que se conoce como el campo cercano o suposición de sonda circular.</p>
+                                    <p>Cálculo del campo cercano → N = D*D / 4λ    or   N = D*D f / 4θ</p>
+                                    <p>N = Longitud del campo cercano (mm)</p></br>
+                                    <p>D = Diámetro de la sonda (mm)</p>
+                                    <p>λ = Longitud de onda (mm)</p>
+                                    <p>θ = Velocidad (m/s)</p>
+                                    <p>f = Frecuencia (Hz).</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <!-- Botón para cerrar el popup -->
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
- <!-- Tarjeta 8 -->
-<div class="col-md-12 mb-5" id="8">
-    <div class="card">
-        <div class="card-body">
-            <h5 class="card-title">8- Impedancia</h5>
-            <form>
-                <div class="form-group">
-                    <label for="nro80">Densidad del material (kg/m^3):</label>
-                    <input type="text" class="form-control" id="nro80" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
-                </div>
-                <div class="form-group">
-                    <label for="nro81">Velocidad del ultrasonido (m/s):</label>
-                    <input type="text" class="form-control" id="nro81" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
-                </div>
-                                                      
-                <button type="button" class="btn btn-success btn-block" onclick="verificarDatos8()">Calcular</button>
-                <!-- Elemento popover oculto -->
-                <div id="popover-content8" class="alert alert-danger" role="alert" style="display: none; margin-top: 10px;">
-                    <div class="alert alert-danger" role="alert">
-                        Debe ingresar todos los datos para realizar el cálculo.
+            <!-- Tarjeta 8 -->
+            <div class="col-md-12 mb-5" id="8">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">8- Impedancia</h5>
+                        <form>
+                            <div class="form-group">
+                                <label for="nro80">Densidad del material (kg/m^3):</label>
+                                <input type="text" class="form-control" id="nro80" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
+                            </div>
+                            <div class="form-group">
+                                <label for="nro81">Velocidad del ultrasonido (m/s):</label>
+                                <input type="text" class="form-control" id="nro81" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
+                            </div>
+                                                                
+                            <div class="row">
+                                <!-- Botón de cálculo (visible en dispositivos grandes) -->
+                                <div class="col-md-9">
+                                    <!-- Botón de cálculo visible en dispositivos grandes -->
+                                    <button type="button" class="btn btn-success btn-block" onclick="verificarDatos8()">Calcular</button>
+                                </div>
+
+                                <!-- Botón de información (visible en dispositivos grandes) -->
+                                <div class="col-md-3">
+                                    <!-- Botón de información visible en dispositivos grandes -->
+                                    <a href="#mi-popup-8" class="btn btn-info btn-block" data-toggle="modal">Información</a>
+                                </div>
+                            </div>
+
+                            <!-- Elemento popover oculto -->
+                            <div id="popover-content8" class="alert alert-danger" role="alert" style="display: none; margin-top: 10px;">
+                                <div class="alert alert-danger" role="alert">
+                                    Debe ingresar todos los datos para realizar el cálculo.
+                                </div>
+                            </div>
+                        </form>
+                        <div class="mt-3">
+                            <p>Resultado - (kg / m^2 s) -: <span id="resultados80" class="resultado-grande"></span></p>
+                        </div>
                     </div>
                 </div>
-            </form>
-            <div class="mt-3">
-                <p>Resultado - (kg / m^2 s) -: <span id="resultados80" class="resultado-grande"></span></p>
             </div>
-        </div>
-    </div>
-</div>
 
+                    <!-- INFO - Tarjeta 8 -->
+                    <div class="modal fade" id="mi-popup-8">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <!-- Contenido del popup -->
+                                <div class="modal-header">
+                                    <h5 class="modal-title">8- Cálculo de la impedancia</h5>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>La impedancia acústica de un material es el producto de la densidad del material y la velocidad del sonido.</p>
+                                    <p>Impedancia acústica (Z) = θ x ρ </p>
+                                    <p>Z = Impedancia acústica (kg/m^2 s)</p></br>
+                                    <p>ρ = Densidad (kg/m^3)</p>
+                                    <p>ρ = Densidad (kg/m^3)</p>
+                                    <p>Determina cuánto sonido se transmitirá y reflejará cuando la onda encuentra un límite con otro material. Cuanto mayor sea la diferencia en la impedancia acústica entre dos materiales, mayor será la cantidad de energía reflejada.</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <!-- Botón para cerrar el popup -->
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
- <!-- Tarjeta 9 -->
-<div class="col-md-12 mb-5" id="9">
-    <div class="card">
-        <div class="card-body">
-            <h5 class="card-title">9- Longitud de Onda</h5>
-            <form>
-                <div class="form-group">
-                    <label for="nro90">Velocidad del ultrasonido (m/s):</label>
-                    <input type="text" class="form-control" id="nro90" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
-                </div>
-                <div class="form-group">
-                    <label for="nro91">Frecuencia del ultrasonido (MHz):</label>
-                    <input type="text" class="form-control" id="nro91" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
-                </div>
-                                                      
-                <button type="button" class="btn btn-success btn-block" onclick="verificarDatos9()">Calcular</button>
-                <!-- Elemento popover oculto -->
-                <div id="popover-content9" class="alert alert-danger" role="alert" style="display: none; margin-top: 10px;">
-                    <div class="alert alert-danger" role="alert">
-                        Debe ingresar todos los datos para realizar el cálculo.
+            <!-- Tarjeta 9 -->
+            <div class="col-md-12 mb-5" id="9">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">9- Longitud de Onda</h5>
+                        <form>
+                            <div class="form-group">
+                                <label for="nro90">Velocidad del ultrasonido (m/s):</label>
+                                <input type="text" class="form-control" id="nro90" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
+                            </div>
+                            <div class="form-group">
+                                <label for="nro91">Frecuencia del ultrasonido (MHz):</label>
+                                <input type="text" class="form-control" id="nro91" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
+                            </div>
+                                                                
+                            <div class="row">
+                                <!-- Botón de cálculo (visible en dispositivos grandes) -->
+                                <div class="col-md-9">
+                                    <!-- Botón de cálculo visible en dispositivos grandes -->
+                                    <button type="button" class="btn btn-success btn-block" onclick="verificarDatos9()">Calcular</button>
+                                </div>
+
+                                <!-- Botón de información (visible en dispositivos grandes) -->
+                                <div class="col-md-3">
+                                    <!-- Botón de información visible en dispositivos grandes -->
+                                    <a href="#mi-popup-9" class="btn btn-info btn-block" data-toggle="modal">Información</a>
+                                </div>
+                            </div>
+
+                            <!-- Elemento popover oculto -->
+                            <div id="popover-content9" class="alert alert-danger" role="alert" style="display: none; margin-top: 10px;">
+                                <div class="alert alert-danger" role="alert">
+                                    Debe ingresar todos los datos para realizar el cálculo.
+                                </div>
+                            </div>
+                        </form>
+                        <div class="mt-3">
+                            <p>Resultado - (m) -: <span id="resultados90" class="resultado-grande"></span></p>
+                        </div>
                     </div>
                 </div>
-            </form>
-            <div class="mt-3">
-                <p>Resultado - (m) -: <span id="resultados90" class="resultado-grande"></span></p>
             </div>
-        </div>
-    </div>
-</div>
 
+                    <!-- INFO - Tarjeta 9 -->
+                    <div class="modal fade" id="mi-popup-9">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <!-- Contenido del popup -->
+                                <div class="modal-header">
+                                    <h5 class="modal-title">9- Cálculo de la longitud de onda</h5>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>La longitud de onda del ultrasonido utilizado tiene un efecto significativo en la probabilidad de detectar una discontinuidad.</p>
+                                    <p>Una regla general es que una discontinuidad debe ser más grande que la mitad de la longitud de onda para tener una posibilidad razonable de ser detectada. </p>
+                                    <p>Longitud de onda λ = θ / f</p></br>
+                                    <p>λ = Longitud de onda (m)</p>
+                                    <p>θ = Frecuencia (Hz)</p>
+                                    <p>f = Velocidad de la onda ultrasónica dentro del medio en (m/s)</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <!-- Botón para cerrar el popup -->
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
- <!-- Tarjeta 10 -->
-<div class="col-md-12 mb-5" id="10">
-    <div class="card">
-        <div class="card-body">
-            <h5 class="card-title">10- Coeficiente de Transmisión</h5>
-            <form>
-                <div class="form-group">
-                    <label for="nro100">Impedancia Z1 (kg/m^2s):</label>
-                    <input type="text" class="form-control" id="nro100" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
-                </div>
-                <div class="form-group">
-                    <label for="nro101">Impedancia Z2 (kg/m^2s):</label>
-                    <input type="text" class="form-control" id="nro101" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
-                </div>
-                           
-                <button type="button" class="btn btn-success btn-block" onclick="verificarDatos10()">Calcular</button>
-                <!-- Elemento popover oculto -->
-                <div id="popover-content10" class="alert alert-danger" role="alert" style="display: none; margin-top: 10px;">
-                    <div class="alert alert-danger" role="alert">
-                        Debe ingresar todos los datos para realizar el cálculo.
+            <!-- Tarjeta 10 -->
+            <div class="col-md-12 mb-5" id="10">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">10- Coeficiente de Transmisión</h5>
+                        <form>
+                            <div class="form-group">
+                                <label for="nro100">Impedancia Z1 (kg/m^2s):</label>
+                                <input type="text" class="form-control" id="nro100" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
+                            </div>
+                            <div class="form-group">
+                                <label for="nro101">Impedancia Z2 (kg/m^2s):</label>
+                                <input type="text" class="form-control" id="nro101" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
+                            </div>
+                                    
+                            <div class="row">
+                                <!-- Botón de cálculo (visible en dispositivos grandes) -->
+                                <div class="col-md-9">
+                                    <!-- Botón de cálculo visible en dispositivos grandes -->
+                                    <button type="button" class="btn btn-success btn-block" onclick="verificarDatos10()">Calcular</button>
+                                </div>
+
+                                <!-- Botón de información (visible en dispositivos grandes) -->
+                                <div class="col-md-3">
+                                    <!-- Botón de información visible en dispositivos grandes -->
+                                    <a href="#mi-popup-10" class="btn btn-info btn-block" data-toggle="modal">Información</a>
+                                </div>
+                            </div>
+
+                            <!-- Elemento popover oculto -->
+                            <div id="popover-content10" class="alert alert-danger" role="alert" style="display: none; margin-top: 10px;">
+                                <div class="alert alert-danger" role="alert">
+                                    Debe ingresar todos los datos para realizar el cálculo.
+                                </div>
+                            </div>
+                        </form>
+                        <div class="mt-3">
+                            <p>Resultado - (m) -: <span id="resultados100" class="resultado-grande"></span></p>
+                        </div>
                     </div>
                 </div>
-            </form>
-            <div class="mt-3">
-                <p>Resultado - (m) -: <span id="resultados100" class="resultado-grande"></span></p>
             </div>
-        </div>
-    </div>
-</div>
+
+                    <!-- INFO - Tarjeta 10 -->
+                    <div class="modal fade" id="mi-popup-10">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <!-- Contenido del popup -->
+                                <div class="modal-header">
+                                    <h5 class="modal-title">10- Coeficiente de transmisión</h5>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>T = (4 * Z2 * Z1) / (Z2 + Z1)^2</p>
+                                    <p>T = Coeficiente de transmisión.</p>
+                                    <p>Z1 = Impedancia acústica del medio 1 (kg/m^2s)</p>
+                                    <p>Z2 = Impedancia acústica del medio 2 (kg/m^2s)</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <!-- Botón para cerrar el popup -->
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
 
- <!-- Tarjeta 11 -->
-<div class="col-md-12 mb-5" id="11">
-    <div class="card">
-        <div class="card-body">
-            <h5 class="card-title">11- Coeficiente de Reflexión</h5>
-            <form>
-                <div class="form-group">
-                    <label for="nro110">Impedancia Z1 (kg/m^2s):</label>
-                    <input type="text" class="form-control" id="nro110" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
-                </div>
-                <div class="form-group">
-                    <label for="nro111">Impedancia Z2 (kg/m^2s):</label>
-                    <input type="text" class="form-control" id="nro111" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
-                </div>
-                           
-                <button type="button" class="btn btn-success btn-block" onclick="verificarDatos11()">Calcular</button>
-                <!-- Elemento popover oculto -->
-                <div id="popover-content11" class="alert alert-danger" role="alert" style="display: none; margin-top: 10px;">
-                    <div class="alert alert-danger" role="alert">
-                        Debe ingresar todos los datos para realizar el cálculo.
+            <!-- Tarjeta 11 -->
+            <div class="col-md-12 mb-5" id="11">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">11- Coeficiente de Reflexión</h5>
+                        <form>
+                            <div class="form-group">
+                                <label for="nro110">Impedancia Z1 (kg/m^2s):</label>
+                                <input type="text" class="form-control" id="nro110" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
+                            </div>
+                            <div class="form-group">
+                                <label for="nro111">Impedancia Z2 (kg/m^2s):</label>
+                                <input type="text" class="form-control" id="nro111" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
+                            </div>
+                                    
+                            <div class="row">
+                                <!-- Botón de cálculo (visible en dispositivos grandes) -->
+                                <div class="col-md-9">
+                                    <!-- Botón de cálculo visible en dispositivos grandes -->
+                                    <button type="button" class="btn btn-success btn-block" onclick="verificarDatos11()">Calcular</button>
+                                </div>
+
+                                <!-- Botón de información (visible en dispositivos grandes) -->
+                                <div class="col-md-3">
+                                    <!-- Botón de información visible en dispositivos grandes -->
+                                    <a href="#mi-popup-11" class="btn btn-info btn-block" data-toggle="modal">Información</a>
+                                </div>
+                            </div>
+
+                            <!-- Elemento popover oculto -->
+                            <div id="popover-content11" class="alert alert-danger" role="alert" style="display: none; margin-top: 10px;">
+                                <div class="alert alert-danger" role="alert">
+                                    Debe ingresar todos los datos para realizar el cálculo.
+                                </div>
+                            </div>
+                        </form>
+                        <div class="mt-3">
+                            <p>Resultado - (%) -: <span id="resultados110" class="resultado-grande"></span></p>
+                        </div>
                     </div>
                 </div>
-            </form>
-            <div class="mt-3">
-                <p>Resultado - (%) -: <span id="resultados110" class="resultado-grande"></span></p>
             </div>
-        </div>
-    </div>
-</div>
+
+                    <!-- INFO - Tarjeta 11 -->
+                    <div class="modal fade" id="mi-popup-11">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <!-- Contenido del popup -->
+                                <div class="modal-header">
+                                    <h5 class="modal-title">11- Coeficiente de reflexión</h5>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Las ondas ultrasónicas se reflejan en los límites donde hay una diferencia en las impedancias acústicas.</p>
+                                    <p>R = (Z2 - Z1)^2 / (Z2 + Z1)^2</p>
+                                    <p>R = Coeficiente de reflexión.</p></br>
+                                    <p>Z1 = Impedancia acústica del medio 1 (kg/m^2s)</p>
+                                    <p>Z2 = Impedancia acústica del medio 2 (kg/m^2s)</p>
+                                    <p>Cuanto mayor sea la discrepancia de impedancia, mayor será el porcentaje de energía que se reflejará en la interfaz.</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <!-- Botón para cerrar el popup -->
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
             <!-- ... -->
 
         </div>
     </div>
+
+    <!-- Pie de página -->
+    <footer class="navbar navbar-expand-lg navbar-light bg-dark">
+        <div class="container">
+            <div class="row">
+                <!-- Sección Sitemap -->
+                <br>
+                <div class="col-sm-4 text-white">
+                    <h4>Sitemap</h4>
+                    <ul class="custom-list">
+                        <li><a href="https://ndt-ensayos-no-destructivos.github.io/" class="text-white">Inicio</a></li>
+                        <li><a href="https://ndt-ensayos-no-destructivos.github.io/calculosUT.html" class="text-white">Calculos</a></li>
+                    </ul><br>
+                </div><br>
+                <!-- Sección Logo -->
+                <div class="col-sm-4 text-white centered-content">
+                    <h4></h4>
+                    <div class="fa-4x">
+                    <img src="https://github.com/ndt-ensayos-no-destructivos/ndt-ensayos-no-destructivos.github.io/blob/main/imagenes/logo1.png?raw=true" alt="Logo" style="width: 190px; height: 100px;" class="fa-bounce">
+                    </div><br><br></div><br>
+                <!-- Sección de Texto -->
+                <div class="col-sm-4 text-white centered-content">
+                    <h4>NDT Ensayos No Destructivos</h4>
+                    <p>
+                        Confíe en nuestro equipo de expertos y 
+                        tecnología de vanguardia para mantener 
+                        la seguridad y calidad en su industria.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
     
     <!-- Enlace a Bootstrap JavaScript y tu script personalizado -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

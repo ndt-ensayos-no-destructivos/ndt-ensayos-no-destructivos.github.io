@@ -10,8 +10,8 @@
 
             // Asignar el valor formateado de vuelta al campo de entrada
             input.value = valor;
-        } 
-         
+        }        
+        
         function calcular1() {
             // Obtener los valores de entrada
             var input1 = parseFloat(document.getElementById("nro1").value);
