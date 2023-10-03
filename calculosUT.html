@@ -21,7 +21,7 @@
 @media (min-width: 992px) {
     /* Centrar el contenido del navbar horizontalmente */
 .navbar-nav {
-    display: flex; 
+    display: flex;
     justify-content: left;
     align-items: left;
 }
@@ -101,14 +101,14 @@
             <div class="col-md-12 mb-5" id="1">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">1-Ganancia</h5>
+                        <h5 class="card-title">1-Ganancia o pérdida en decibelios (presión acústica)</h5>
                         <form>
                             <div class="form-group">
-                                <label for="input1">P1 - Amplitud de referencia (%):</label>
+                                <label for="input1">P1 - Amplitud en patrón de referencia (%):</label>
                                 <input type="text" class="form-control" id="nro1" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
                             </div>
                             <div class="form-group">
-                                <label for="input2">P2 - Ingresar amplitud del resultado (%):</label>
+                                <label for="input2">P2 - Amplitud en pieza del resultado (%):</label>
                                 <input type="text" class="form-control" id="nro2" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
                             </div>
                             <div class="row">
@@ -146,16 +146,22 @@
                             <div class="modal-content">
                                 <!-- Contenido del popup -->
                                 <div class="modal-header">
-                                    <h5 class="modal-title">1- Ganancia o pérdida en decibelios</h5>
+                                    <h5 class="modal-title">1- Ganancia o pérdida en decibelios (presión acústica)</h5>
                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                                 </div>
                                 <div class="modal-body">
-                                    <p>El dB es una unidad logarítmica que describe una relación entre dos mediciones.</p>
-                                    <p>La ecuación utilizada para describir la diferencia en intensidad entre dos mediciones ultrasónicas u otras mediciones de sonido es:</p>
-                                    <p>△l(dB)=20log(P2/P1)</p></br>
+                                    <p>El dB es una unidad logarítmica que describe una relación entre dos mediciones. En los equipos de medición, las alturas de ecos representan los decibeles.</p>
+                                    <p>Esta ecuación es utilizada para describir la diferencia en presión e intensidad entre dos mediciones ultrasónicas.</p>
+                                    <p>Los resultados máximos admitidos estan entre +/- 2 dB</p>
+                                    <br>
+                                    <p><strong>Presión Acústica:</strong></p>
+                                    <p style="color: red;">△l(dB)=20log(P2/P1)</p>
                                     <p>dB = Decibelio</p>
-                                    <p>P1 = Amplitud de presión 1</p>
-                                    <p>P2 = Amplitud de presión 2</p>
+                                    <p>P1 = Amplitud en patrón de presión 1</p>
+                                    <p>P2 = Amplitud en la pieza de presión 2</p>
+                                    <br>
+                                    <p>En caso de calcular la <strong>intensidad aústica</strong>, la fórmula es la siguiente:</p>
+                                    <p style="color: red;">△l(dB)=10log(H2/H1)</p>
                                 </div>
                                 <div class="modal-footer">
                                     <!-- Botón para cerrar el popup -->
@@ -169,10 +175,10 @@
             <div class="col-md-12 mb-5" id="2">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">2- Ancho de Haz</h5>
+                        <h5 class="card-title">2- Ancho de Haz (campo próximo y campo de transición)</h5>
                         <form>
                             <div class="form-group">
-                                <label for="nro3">Diámetro de la sonda (mm) D:</label>
+                                <label for="nro3">Diámetro de la sonda o del cristal (mm) D:</label>
                                 <input type="text" class="form-control" id="nro3" placeholder="Ingrese un valor" oninput="formatoNumero(this)">
                             </div>
                             <div class="form-group">
@@ -204,8 +210,10 @@
                             </div>
                         </form>
                         <div class="mt-3">
+                            <p><strong>Campo Próximo</strong></p>
                             <p>Resultado -λ-: <span id="resultados20" class="resultado-grande"></span></p>
                             <p>Resultado -N = 0,25 * (D^2 / λ )-: <span id="resultados21" class="resultado-grande"></span></p>
+                            <p><strong>Campo de Transición</strong></p>
                             <p>Resultado -Sen0 = 1,22 * ( λ/D )-: <span id="resultados22" class="resultado-grande"></span></p>
                             <p>Resultado -Sen0 = 1,08* ( λ/D )-: <span id="resultados23" class="resultado-grande"></span></p>
                             <p>Resultado -Sen0 = 0,51 * ( λ/D )-: <span id="resultados24" class="resultado-grande"></span></p>
@@ -224,10 +232,13 @@
                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                                 </div>
                                 <div class="modal-body">
-                                    <p>La divergencia del haz de sonido a medida que viaja a través de un medio.
-                                        Específicamente, el ángulo sólido que contiene el lóbulo principal del haz en el campo lejano (suposición de sonda circular).
-                                        </p>
-                                    <p>sin(θ/2)= k(λ/D) or sin(θ/2)=k(θ/Df)</p>
+                                    <p>La divergencia del haz de sonido a medida que viaja a través de un medio.</p>
+                                    <p>Específicamente, el ángulo sólido que contiene el lóbulo principal del haz en el campo lejano (suposición de sonda circular).</p>
+                                    <p>El campo sónico se divide en cuatro zonas: zona muerta, campo cercano, campo de transición y campo lejano.</p>
+                                    <p>En el <strong>campo cercano</strong>, se observa un efecto focal en el campo sónico, donde se evidencia un menor diámetro y una mayor sensibilidad.</p>
+                                    <p>El <stron>campo de transición</stron>, se refiere a la zona donde una onda o fenómeno experimenta un cambio gradual de una característica a otra. Se lo relaciona a la teoría de la difracción de la luz al pasar por obstáculos, lo que afecta la fomración de patrones de interferencia y la resolución de imágenes.</p>
+                                    <br>
+                                    <p style="color: red;"><strong>sin(θ/2)= k(λ/D) or sin(θ/2)=k(θ/Df)</strong></p>                            
                                     <p>N = Longitud del campo cercano (mm)</p>
                                     <p>D = Diámetro de la sonda (mm)</p>
                                     <p>λ = Longitud de onda (mm)</p>
