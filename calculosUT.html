@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8"> 
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="author" content="Diego Velázquez, Inspector de Ensayos No Destructivos" />
     <meta name="robots"  content="index,follow"  />
@@ -33,6 +33,7 @@
     transform: translateX(-50%);
 }
 }
+
 /* Estilos para campos de entrada que faltan datos */
 .input-sin-datos {
     border: 1px solid red; /* Bordes rojos para resaltar */
@@ -184,12 +185,12 @@
                             <div class="form-group">
                                 <label for="materialSelect">Material:</label>
                                 <select class="form-control" id="materialSelect" onchange="cambiarTipoOnda()">
+                                    <!-- Opción para agregar manualmente -->
+                                    <option value="manual" selected>Agregar manualmente</option>
                                     <!-- Opciones de material predefinidas -->
                                     <option value="aluminio">Aluminio</option>
                                     <option value="plomo">Plomo</option>
                                     <option value="hierro">Hierro/Acero</option>
-                                    <!-- Opción para agregar manualmente -->
-                                    <option value="manual">Agregar manualmente</option>
                                 </select>
                             </div>
                             <div class="form-group">
@@ -204,46 +205,7 @@
                                 <label for="ondaCheckboxTransversal">Onda Transversal:</label>
                                 <input type="checkbox" id="ondaCheckboxTransversal" onchange="cambiarTipoOnda()">
                             </div>
-
-                            <script>
-                            // Valores por defecto de las velocidades de onda
-                            var velocidadesLongitudinal = { aluminio: 6300, plomo: 2160, hierro: 5900 };
-                            var velocidadesTransversal = { aluminio: 3080, plomo: 700, hierro: 3230 };
-
-                            // Función para cambiar entre onda longitudinal y transversal
-                            function cambiarTipoOnda() {
-                                var materialSelect = document.getElementById("materialSelect");
-                                var nro4Input = document.getElementById("nro4");
-                                var ondaCheckboxLongitudinal = document.getElementById("ondaCheckboxLongitudinal");
-                                var ondaCheckboxTransversal = document.getElementById("ondaCheckboxTransversal");
-                                var selectedMaterial = materialSelect.value;
-
-                                if (selectedMaterial === "manual") {
-                                    // Habilitar entrada manual
-                                    nro4Input.disabled = false;
-                                } else {
-                                    // Deshabilitar entrada manual y usar valores predefinidos
-                                    nro4Input.disabled = true;
-                                    if (selectedMaterial in velocidadesLongitudinal) {
-                                        if (ondaCheckboxLongitudinal.checked) {
-                                            // Si se marca "longitudinal", desmarca "transversal"
-                                            ondaCheckboxTransversal.checked = false;
-                                            nro4Input.value = velocidadesLongitudinal[selectedMaterial];
-                                        } else if (ondaCheckboxTransversal.checked) {
-                                            // Si se marca "transversal", desmarca "longitudinal"
-                                            ondaCheckboxLongitudinal.checked = false;
-                                            nro4Input.value = velocidadesTransversal[selectedMaterial];
-                                        }
-                                    }
-                                }
-                            }
-                            // Llamada inicial para establecer los valores por defecto
-                            cambiarTipoOnda();
-                                // Marcar uno de los checkboxes como predeterminado (Onda Longitudinal)
-                                document.getElementById("ondaCheckboxLongitudinal").checked = true;
-                            </script>
                             
-
 
                             <div class="form-group">
                                 <label for="nro5">Frecuencia de ultrasonido (MHz):</label>
@@ -999,6 +961,44 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // Valores por defecto de las velocidades de onda
+        var velocidadesLongitudinal = { aluminio: 6300, plomo: 2160, hierro: 5900 };
+        var velocidadesTransversal = { aluminio: 3080, plomo: 700, hierro: 3230 };
+
+        // Función para cambiar entre onda longitudinal y transversal
+        function cambiarTipoOnda() {
+            var materialSelect = document.getElementById("materialSelect");
+            var nro4Input = document.getElementById("nro4");
+            var ondaCheckboxLongitudinal = document.getElementById("ondaCheckboxLongitudinal");
+            var ondaCheckboxTransversal = document.getElementById("ondaCheckboxTransversal");
+            var selectedMaterial = materialSelect.value;
+
+            if (selectedMaterial === "manual") {
+                // Habilitar entrada manual
+                nro4Input.disabled = false;
+            } else {
+                // Deshabilitar entrada manual y usar valores predefinidos
+                nro4Input.disabled = true;
+                if (selectedMaterial in velocidadesLongitudinal) {
+                    if (ondaCheckboxLongitudinal.checked) {
+                        // Si se marca "longitudinal", desmarca "transversal"
+                        ondaCheckboxTransversal.checked = false;
+                        nro4Input.value = velocidadesLongitudinal[selectedMaterial];
+                    } else if (ondaCheckboxTransversal.checked) {
+                        // Si se marca "transversal", desmarca "longitudinal"
+                        ondaCheckboxLongitudinal.checked = false;
+                        nro4Input.value = velocidadesTransversal[selectedMaterial];
+                    }
+                }
+            }
+        }
+        // Llamada inicial para establecer los valores por defecto
+        cambiarTipoOnda();
+            // Marcar uno de los checkboxes como predeterminado (Onda Longitudinal)
+            document.getElementById("ondaCheckboxLongitudinal").checked = true;
+        </script>
     
 </body>
 </html>
