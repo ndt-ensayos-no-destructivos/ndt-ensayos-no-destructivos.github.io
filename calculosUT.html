@@ -1,7 +1,7 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8"> 
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="author" content="Diego Velázquez, Inspector de Ensayos No Destructivos" />
     <meta name="robots"  content="index,follow"  />
@@ -191,6 +191,20 @@
                                     <option value="aluminio">Aluminio</option>
                                     <option value="plomo">Plomo</option>
                                     <option value="hierro">Hierro/Acero</option>
+                                    <option value="fundicion_gris">Fundición Gris</option>
+                                    <option value="cobre">Cobre</option>
+                                    <option value="magnesio">Magnesio</option>
+                                    <option value="laton">Latón</option>
+                                    <option value="plata">Plata</option>
+                                    <option value="niquel">Níquel</option>
+                                    <option value="tungsteno">Tungsteno</option>
+                                    <option value="cinc">Cinc</option>
+                                    <option value="estano">Estaño</option>
+                                    <option value="titanato_de_bario">Titanato de Bario</option>
+                                    <option value="goma">Goma</option>
+                                    <option value="plexiglas">Plexiglás</option>
+                                    <option value="poliestirol">Poliestirol</option>
+                                    <option value="porcelana">Porcelana</option>
                                 </select>
                             </div>
                             <div class="form-group">
@@ -205,7 +219,7 @@
                                 <label for="ondaCheckboxTransversal">Onda Transversal:</label>
                                 <input type="checkbox" id="ondaCheckboxTransversal" onchange="cambiarTipoOnda()">
                             </div>
-                            
+
 
                             <div class="form-group">
                                 <label for="nro5">Frecuencia de ultrasonido (MHz):</label>
@@ -964,8 +978,46 @@
 
     <script>
         // Valores por defecto de las velocidades de onda
-        var velocidadesLongitudinal = { aluminio: 6300, plomo: 2160, hierro: 5900 };
-        var velocidadesTransversal = { aluminio: 3080, plomo: 700, hierro: 3230 };
+        var velocidadesLongitudinal = {
+            aluminio: 6300,
+            plomo: 2160,
+            hierro: 5900,
+            fundicion_gris: 4600,
+            cobre: 4700,
+            magnesio: 4800,
+            laton: 3830,
+            plata: 4760,
+            niquel: 5630,
+            tungsteno: 5460,
+            cinc: 4170,
+            estano: 3220,
+            titanato_de_bario: 6050,
+            goma: 2300,
+            plexiglas: 2740,
+            poliestirol: 2350,
+            porcelana: 5340
+        };
+
+        var velocidadesTransversal = {
+            aluminio: 3080,
+            plomo: 700,
+            hierro: 3230,
+            fundicion_gris: 2160,
+            cobre: 2260,
+            magnesio: 2260,
+            laton: 2050,
+            plata: 2160,
+            niquel: 2960,
+            tungsteno: 2620,
+            cinc: 2410,
+            estano: 1670,
+            titanato_de_bario: 3500,
+            goma: 1000,
+            plexiglas: 1120,
+            poliestirol: 1120,
+            porcelana: 3120
+        };
+
 
         // Función para cambiar entre onda longitudinal y transversal
         function cambiarTipoOnda() {
